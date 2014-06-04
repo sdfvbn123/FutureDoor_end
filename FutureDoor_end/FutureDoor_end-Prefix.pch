@@ -1,0 +1,48 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import "UConstants.h"
+#define Screen_height   [[UIScreen mainScreen] bounds].size.height
+#define Screen_width    [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_SIZE [UIScreen mainScreen].bounds.size
+
+//tabbar的尺寸
+#define kW_tabBarWidth 64
+#define kH_tabBarHeight 49
+//主页上的按钮的尺寸
+#define kW_ButtonWidth 90
+#define kH_ButtonHeight 69.5f
+#define kX_ButtonX 2 //主页的按钮X坐标
+#define kY_ButtonY 30//主页的按钮Y坐标
+#define kH_Interval 2.5f //主页的按钮距离间隔大小
+#define kH_MyImageViewHeight 108 //滚动条图片的大小
+//实践中心按钮
+#define kW_PracticeBtnWidth 64
+#define kW_PracticeBtnHeight 78.5f
+
+#define kNavigationBarFit(className) [className setEdgesForExtendedLayout:UIRectEdgeNone];\
+[className setExtendedLayoutIncludesOpaqueBars:NO];\
+[className setModalPresentationCapturesStatusBarAppearance:NO];\
+self.navigationController.navigationBar.translucent = NO;
+
+#define kSET_NAV_BACKGOUND_COLOR [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault]
+
+#define API_GETDATA_URL(URL) [NSURL URLWithString:URL]
+#define NEWS_URL_LIST @"http://www.xinquanxinyuan.com/app/newslist.php"
+
+#define URL_SERVICE_ADDRESS @"http://test12345.ns4.mfdns.com"
+
+#endif
